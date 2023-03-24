@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def canUnlockAll(boxes):
-# list to keep track on boxes
+"""
+    Determines whether all the boxes in a set of locked boxes can be opened.
+"""
     unlocked_boxes = [0]
 
     while True:
