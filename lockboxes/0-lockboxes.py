@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def canUnlockAll(boxes):
-
+# list to keep track on boxes
     unlocked_boxes = [0]
 
     while True:
