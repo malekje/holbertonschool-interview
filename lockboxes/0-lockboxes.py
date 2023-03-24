@@ -1,14 +1,8 @@
 #!/usr/bin/python3
-def canUnlockAll(boxes):
-  """
+"""
     Determines whether all the boxes in a set of locked boxes can be opened.
-
-    Args:
-        boxes (list of lists): A list of n lists, where each list contains the keys to the other boxes. The boxes are numbered sequentially from 0 to n - 1.
-
-    Returns:
-        bool: True if all the boxes can be opened, False otherwise.
-    """
+"""
+def canUnlockAll(boxes):
     unlocked_boxes = [0]
 
     while True:
