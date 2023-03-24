@@ -2,22 +2,14 @@
 """
     Determines whether all the boxes in a set of locked boxes can be opened.
 """
+
+
 def canUnlockAll(boxes):
-    unlocked_boxes = [0]
-
-    while True:
-        unlocked_new_box = False
-
-        for box in boxes:
-            if boxes.index(box) in unlocked_boxes and boxes.index(box) not in unlocked_boxes:
-                unlocked_boxes.append(boxes.index(box))
-                unlocked_new_box = True
-        
-        if not unlocked_new_box:
-            break
-
-    if len(unlocked_boxes) == len(boxes):
-        return True
-    
-    else:
-        return False
+    num_of_boxes = len(boxes)
+    list_of_keys = boxes[0]
+    box_locked = [False] + [True] * (num_of_boxes - 1)
+    for key in list_of_keys:
+        if ((key < num_of_boxes) and (box_locked[key] is True)):
+            box_locked[key] = False
+            list_of_keys.extend(boxes[key])
+    return not any(box_locked)
